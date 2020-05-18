@@ -12,22 +12,40 @@
   </header>
   <main>
 
-    <div class="e-modal">
-      <button>Close modal</button>
+    <div class="e-modal e-modal--is-showing">
 
-      <div class="a-button-icon" class="o-stepper">
+      <div class="e-modal__panel">
+        <button class="a-button-icon-only e-modal__button-close" tabindex="0" aria-label="Close modal" data-modal-close>
+          <!-- Optimized with SVGOMG https://jakearchibald.github.io/svgomg/ -->
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="19" height="19">
+            <path stroke-width="2" stroke="#000" fill="none" d="M1.7 1.8l15.8 15.7M17.5 1.8L1.7 17.5"/>
+          </svg>
 
-        <article class="">
-          <img src="#" alt="Stepper image">
-          <h1>Stepper item</h1>
-          <p>Stepper text</p>
-          <button class="a-button">Stepper button</button>
-          <a href="#">Stepper link</a>
-        </article>
+          <span class="u-screen-reader-only">Close modal</span>
+        </button>
 
+        <div class="e-stepper" data-stepper>
+
+          <article class="m-stepper-item" data-stepper-item="1">
+            <img class="m-stepper-item__image" src="images/customer-service.svg" alt="Stepper image">
+            <h1>Stepper item</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis nulla non libero auctor, nec venenatis leo convallis.</p>
+            <button class="a-button" data-stepper-next>Stepper button</button>
+            <a href="#">Stepper link</a>
+          </article>
+
+          <article class="m-stepper-item" data-stepper-item="2">
+            <img class="m-stepper-item__image" src="images/email.svg" alt="Stepper image">
+            <h1>Stepper item</h1>
+            <p>Proin sed sapien tortor. Integer at auctor urna. Praesent euismod leo ac lobortis ultrices. Ut vitae velit massa.</p>
+            <button class="a-button" data-stepper-next>Stepper button</button>
+            <a href="#">Stepper link</a>
+          </article>
+
+        </div>
+        <div class="e-modal-background"></div>
       </div>
     </div>
-
 
   </main>
   <script src="js/bundle.js"></script>

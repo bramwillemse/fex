@@ -1,4 +1,97 @@
 
+/*
+MODAL
+-----
+Functional styling for a reusable modal pop-up
+*/
+
+// Global scroll behaviour
+.is--modal-open {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+
+  &.is-touch {
+    position: fixed;
+
+    body {
+      position: fixed;
+    }
+  }
+}
+
 .e-modal {
-  background-color: grey;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  pointer-events: none;
+  position: fixed;
+  margin-top: 75px; // correction for site-header
+  visibility: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  @include z(modal);
+}
+
+// Panel - holds modal content
+.e-modal__panel {
+  background-color: $white;
+  height: auto;
+  max-width: 95vw;
+  opacity: 0;
+  padding: $spacing-l;
+  transform: scale3d(.9, .9, .9);
+  transition: .15s $ease-in-out-quad;
+  transition-property: transform opacity;
+  width: 100%;
+  z-index: 1;
+
+  @include breakpoint(m) {
+    max-width: 66vw;
+  }
+
+  @include breakpoint(l) {
+    max-width: 720px;
+  }
+}
+
+// Separate background element for animation and z-index purposes
+.e-modal-background {
+  background-color: $grey-50;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity .15s $ease-in-out-quad;
+  z-index: 0;
+}
+
+// Modal is showing
+.e-modal--is-showing {
+  pointer-events: all;
+  visibility: visible;
+
+  .e-modal__panel {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  .modal__background {
+    left: 0;
+    opacity: .5;
+  }
+}
+
+
+.e-modal__button-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
 }

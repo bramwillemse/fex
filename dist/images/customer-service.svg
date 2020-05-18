@@ -1,0 +1,45 @@
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112"><title>working</title>
+
+<defs>
+    <style>
+        /* Hide all of the icons first. */
+        .icon {
+            display: none;
+        }
+
+        .icon--small {
+            display: block;
+        }
+
+
+        /* Display the desired icon and hide the others according to the viewport's size. */
+        @media screen and (min-width: 100px) {
+
+            .icon--large {
+                display: block;
+            }
+
+            .icon--small {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 69px){
+            .icon--small * {
+                stroke-width: 3;
+            }
+        }
+    </style>
+</defs>
+
+
+<g class="icon icon--large">
+<path d="M96.41,58.33A56.3,56.3,0,0,1,97.22,67c0,24.3-18.69,44-41.75,44S13.72,91.3,13.72,67A44.61,44.61,0,0,1,32.5,30.24" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M96.41,58.33A46.85,46.85,0,0,1,78.11,62c-20.86,0-39.47-13-45.61-31.78" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="5.83" y1="51.53" x2="5.83" y2="85.6" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="106.17" y1="85.6" x2="106.17" y2="51.53" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M106.17,51.53C106.17,22.43,84.26,1,56.36,1A50.53,50.53,0,0,0,5.83,51.53" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="10.22" y1="70.62" x2="10.22" y2="51.99" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M101.74,52c0-26.54-20-46.09-45.43-46.09A46.09,46.09,0,0,0,10.22,52" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M101.72,51.62A45.74,45.74,0,0,1,72.19,94.39" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="67.61" cy="95.55" r="4.59" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M5.83,85.6a17.58,17.58,0,0,0,17.58,17.58h8.3" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M106.17,85.6a17.58,17.58,0,0,1-17.58,17.58H79.22" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+
+<g class="icon icon--small">
+<path d="M96.41,58.33A56.3,56.3,0,0,1,97.22,67c0,24.3-18.69,44-41.75,44S13.72,91.3,13.72,67A44.61,44.61,0,0,1,32.5,30.24" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M96.41,58.33A46.85,46.85,0,0,1,78.11,62c-20.86,0-39.47-13-45.61-31.78" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="5.83" y1="51.53" x2="5.83" y2="85.6" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="106.17" y1="85.6" x2="106.17" y2="51.53" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M106.17,51.53C106.17,22.43,84.26,1,56.36,1A50.53,50.53,0,0,0,5.83,51.53" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="10.22" y1="70.62" x2="10.22" y2="51.99" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M101.74,52c0-26.54-20-46.09-45.43-46.09A46.09,46.09,0,0,0,10.22,52" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M101.72,51.62A45.74,45.74,0,0,1,72.19,94.39" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="67.61" cy="95.55" r="4.59" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M5.83,85.6a17.58,17.58,0,0,0,17.58,17.58h8.3" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M106.17,85.6a17.58,17.58,0,0,1-17.58,17.58H79.22" fill="none" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g>
+
+
+</svg>

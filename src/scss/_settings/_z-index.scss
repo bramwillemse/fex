@@ -1,0 +1,19 @@
+
+// Z-INDEX
+// Z-indices defined globally
+//
+// Usage:
+// @include z(labelName);
+
+$layers: (
+  siteHeader: 12,
+  modal: 11,
+  modalBackground: 10,
+  dropdown: 1,
+  content: 0
+);
+
+@mixin z($label) {
+  z-index: map-get($layers, $label);
+}
+

@@ -1,0 +1,23 @@
+
+/*
+BREAKPOINTS
+Mixin to easily apply T-shirt sized breakpoints
+
+Usage:
+@include breakpoint(m);
+*/
+
+@mixin breakpoint($point) {
+  @if $point == s {
+      @media screen and (min-width: 40em) { @content; }
+  }
+  @else if $point == m {
+      @media screen and (min-width: 60em) { @content; }
+  }
+  @else if $point == l {
+      @media screen and (min-width: 70em) { @content; }
+  }
+  @else if $point == xl {
+      @media screen and (min-width: 90em) { @content; }
+  }
+}

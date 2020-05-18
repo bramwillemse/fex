@@ -1,0 +1,10 @@
+.m-stepper-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.m-stepper-item__image {
+  max-height: 150px;
+  width: auto;
+}

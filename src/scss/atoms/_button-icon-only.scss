@@ -1,0 +1,21 @@
+
+/*
+BUTTON ICON ONLY
+Button display only an image and visually hides label
+*/
+
+.a-button-icon-only {
+  padding: $spacing-s;
+  transform: scale3d(.75, .75, .75);
+  transition: transform .3s $ease-in-out-quad;
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1, 1, 1);
+  }
+
+  &:active {
+    transform: scale3d(.75, .75, .75);
+    transition-duration: .15s;
+  }
+}
