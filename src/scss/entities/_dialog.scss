@@ -29,8 +29,8 @@ Functional styling for a reusable dialog pop-up
   pointer-events: none;
   position: fixed;
   top: 0;
-  transition: .3ms $ease-in-out-quad, 0s linear .3s;
-  transition-property: opacity, visibility left;
+  transition: .2s $ease-in-out-quad .1s, 0s linear .3s;
+  transition-property: opacity, visibility;
   visibility: hidden;
   width: 100%;
   @include z(dialog);
@@ -40,8 +40,8 @@ Functional styling for a reusable dialog pop-up
   display: block;
   height: 100%;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 // Panel - holds dialog content
@@ -94,7 +94,7 @@ Functional styling for a reusable dialog pop-up
   .e-dialog__panel {
     opacity: 1;
     transform: scale3d(1, 1, 1);
-    transition: .3s $ease-in-out-quad 100ms, .3s $ease-in-out-quad;
+    transition: .3s $ease-in-out-quad .1s, .3s $ease-in-out-quad;
     transition-property: transform, opacity;
   }
 
