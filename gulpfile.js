@@ -47,13 +47,13 @@ function watchTask(){
   browserSync.init({
     server: {
       injectChanges: true,
-      baseDir: "./dist" // change on your preferred
+      baseDir: "./" // change on your preferred
     }
   })
 
   watch(files.scripts, series(scriptsTask))
   watch(files.styles, series(stylesTask))
-  watch(files.html).3on('change', browserSync.reload)
+  watch(files.html).on('change', browserSync.reload)
   watch('./dist/css/*.css').on('change', browserSync.reload)
   watch('./dist/js/*.js').on('change', browserSync.reload)
 }
