@@ -1,0 +1,14 @@
+
+/*
+BODY SCROLL LOCK
+----------------
+Locks scrolling on body to prevent background scrolling behaviour.
+Used in utilities/body-scroll.js
+*/
+
+.u-body-scroll-lock {
+  min-height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

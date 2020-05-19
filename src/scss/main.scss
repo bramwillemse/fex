@@ -2,7 +2,7 @@
 // Settings
 @import "_settings/breakpoints";
 @import "_settings/colors";
-@import "_settings/easings.scss";
+@import "_settings/easings";
 @import "_settings/spacing";
 @import "_settings/z-index";
 
@@ -35,4 +35,5 @@
 @import "organisms/site-header";
 
 // Utilities
-@import "_utilities/screen-reader-only.scss";
+@import "_utilities/screen-reader-only";
+@import "_utilities/body-scroll-lock";

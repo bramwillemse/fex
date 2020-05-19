@@ -1,2 +1,1 @@
-
-console.log('Hello world!');
+require('./dialog/dialog.js')

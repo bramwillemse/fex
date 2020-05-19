@@ -7,13 +7,15 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+var browserify = require('browserify');
+var babelify = require('babelify');
+const source = require("vinyl-source-stream");
 
 // File paths
 const files = {
   styles: './src/scss/**/*.scss',
   scripts: './src/js/**/*.js',
+  scriptsMain: './src/js/main.js',
   html: './**/*.html'
 }
 
@@ -28,10 +30,14 @@ function stylesTask() {
 }
 
 function scriptsTask(){
-  return src(files.scripts)
-    .pipe(concat('bundle.js'))
-    .pipe(uglify())
-    .pipe(dest('./dist/js')
+  return (
+    browserify({
+        entries: files.scriptsMain,
+        transform: [babelify.configure({ presets: ['@babel/preset-env'] })]
+    })
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(dest('./dist/js'))
   )
 }
 
@@ -47,7 +53,7 @@ function watchTask(){
 
   watch(files.scripts, series(scriptsTask))
   watch(files.styles, series(stylesTask))
-  watch(files.html).on('change', browserSync.reload)
+  watch(files.html).3on('change', browserSync.reload)
   watch('./dist/css/*.css').on('change', browserSync.reload)
   watch('./dist/js/*.js').on('change', browserSync.reload)
 }
