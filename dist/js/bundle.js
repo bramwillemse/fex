@@ -46,6 +46,7 @@ var Dialog = /*#__PURE__*/function () {
     if (!this.dialog) return;
     this.triggerElement = triggerElement;
     this.closeButtons = _toConsumableArray(this.dialog.querySelectorAll("[".concat(DIALOG_CLOSE, "]")));
+    this.focusableElements = _toConsumableArray(this.dialog.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'));
     this.setupEventHandlers();
   }
 
@@ -57,6 +58,7 @@ var Dialog = /*#__PURE__*/function () {
       if (this.triggerElement) {
         this.triggerElement.addEventListener('click', function (event) {
           event.preventDefault();
+          _this.activeElementBeforeOpen = event.target;
 
           _this.open();
         });
@@ -69,18 +71,27 @@ var Dialog = /*#__PURE__*/function () {
           _this.close();
         });
       });
+      this.dialog.addEventListener('keydown', function (event) {
+        return _this.handleKeydown(event);
+      }, true);
+    }
+  }, {
+    key: "handleKeydown",
+    value: function handleKeydown(event) {
+      if (event.key === "Escape") this.close();
     }
   }, {
     key: "open",
     value: function open() {
       this.dialog.classList.add(ACTIVE_CLASS);
+      this.focusableElements[0].focus();
       (0, _bodyScroll.disableBodyScroll)();
     }
   }, {
     key: "close",
     value: function close() {
-      console.log('close');
       this.dialog.classList.remove(ACTIVE_CLASS);
+      this.activeElementBeforeOpen.focus();
       (0, _bodyScroll.enableBodyScroll)();
     }
   }]);

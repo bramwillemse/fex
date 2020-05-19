@@ -17,6 +17,7 @@ export class Dialog {
 
     this.triggerElement = triggerElement
     this.closeButtons = [...this.dialog.querySelectorAll(`[${DIALOG_CLOSE}]`)]
+    this.focusableElements = [...this.dialog.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]')]
 
     this.setupEventHandlers()
   }
@@ -25,6 +26,7 @@ export class Dialog {
     if (this.triggerElement) {
       this.triggerElement.addEventListener('click', event => {
         event.preventDefault()
+        this.activeElementBeforeOpen = event.target
         this.open()
       })
     }
@@ -35,16 +37,23 @@ export class Dialog {
         this.close()
       })
     )
+
+    this.dialog.addEventListener('keydown', event => this.handleKeydown(event), true)
+  }
+
+  handleKeydown(event) {
+    if(event.key === "Escape") this.close()
   }
 
   open() {
     this.dialog.classList.add(ACTIVE_CLASS)
+    this.focusableElements[0].focus()
     disableBodyScroll()
   }
 
   close() {
-    console.log('close')
     this.dialog.classList.remove(ACTIVE_CLASS)
+    this.activeElementBeforeOpen.focus()
     enableBodyScroll()
   }
 }

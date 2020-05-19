@@ -14,15 +14,22 @@
       <img class="o-site-header__logo" src="images/fedex-logo.png">
     </header>
 
-    <!-- DIALOG TRIGGER -->
-    <button class="a-button" aria-controls="dialog-1234" data-dialog-trigger>
-      Open dialog
-    </button>
+    <article class="u-text-align-center">
+      <p>Click the button below to open your package.</p>
+
+      <!-- DIALOG TRIGGER -->
+      <button class="a-button" aria-controls="dialog-1234" data-dialog-trigger>
+        Open dialog
+      </button>
+    </article>
 
     <!-- DIALOG -->
-    <div id="dialog-1234" class="e-dialog" role="dialog" tabindex="0">
+    <div id="dialog-1234" class="e-dialog">
       <div class="e-dialog__container">
-        <div class="e-dialog__panel">
+        <div class="e-dialog__panel" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="0">
+          <h1 id="dialog-title" class="u-screen-reader-only">New features</h1>
+          <p id="dialog-description" class="u-screen-reader-only">Check out our latest features.</p>
+
           <!-- Dialog close button -->
           <button class="a-button-icon-only e-dialog__button-close" tabindex="0" aria-label="Close dialog" data-dialog-close>
             <!-- Optimized with SVGOMG https://jakearchibald.github.io/svgomg/ -->
