@@ -34,6 +34,10 @@ Functional styling for a reusable dialog pop-up
   visibility: hidden;
   width: 100%;
   @include z(dialog);
+
+  * {
+    pointer-events: none;
+  }
 }
 
 .e-dialog__container {
@@ -51,6 +55,7 @@ Functional styling for a reusable dialog pop-up
   margin: $spacing-l auto;
   max-width: 95vw;
   opacity: 0;
+  outline: none;
   padding: $spacing-l;
   position: relative;
   transform: scale3d(.9, .9, .9);
@@ -90,6 +95,10 @@ Functional styling for a reusable dialog pop-up
   transition: .3s $ease-in-out-quad, 0s linear;
   transition-property: opacity, visibility;
   visibility: visible;
+
+  * {
+    pointer-events: all;
+  }
 
   .e-dialog__panel {
     opacity: 1;

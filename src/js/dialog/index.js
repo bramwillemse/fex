@@ -4,6 +4,8 @@ import { disableBodyScroll, enableBodyScroll } from '../utilities/body-scroll'
 DIALOG
 ------
 Open a dialog with a static trigger
+
+@TODO: Add focus trap
 */
 
 const DIALOG_TRIGGER = 'data-dialog-trigger'
@@ -26,6 +28,7 @@ export class Dialog {
     if (this.triggerElement) {
       this.triggerElement.addEventListener('click', event => {
         event.preventDefault()
+        // Save currently focused element
         this.activeElementBeforeOpen = event.target
         this.open()
       })
@@ -47,12 +50,14 @@ export class Dialog {
 
   open() {
     this.dialog.classList.add(ACTIVE_CLASS)
+    // Set focus to first focusable element in dialog
     this.focusableElements[0].focus()
     disableBodyScroll()
   }
 
   close() {
     this.dialog.classList.remove(ACTIVE_CLASS)
+    // Reset focus to previously focused element before opening dialog
     this.activeElementBeforeOpen.focus()
     enableBodyScroll()
   }

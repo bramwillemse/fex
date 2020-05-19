@@ -1,1 +1,2 @@
-require('./dialog/dialog.js')
+require('./dialog')
+require('./stepper')
