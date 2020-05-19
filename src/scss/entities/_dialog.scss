@@ -23,32 +23,39 @@ Functional styling for a reusable dialog pop-up
 }
 
 .e-dialog {
-  display: flex;
-  // height: 100%;
-  justify-content: center;
+  height: 100%;
   left: 0;
-  margin-top: 85px; // correction for site-header
   opacity: 0;
-  overflow: auto;
   pointer-events: none;
   position: fixed;
+  top: 0;
+  transition: .3ms $ease-in-out-quad, 0s linear .3s;
+  transition-property: opacity, visibility left;
   visibility: hidden;
   width: 100%;
-  -webkit-overflow-scrolling: touch;
   @include z(dialog);
+}
+
+.e-dialog__container {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
 // Panel - holds dialog content
 .e-dialog__panel {
   background-color: $white;
   height: auto;
+  margin: $spacing-l auto;
   max-width: 95vw;
   opacity: 0;
   padding: $spacing-l;
   position: relative;
   transform: scale3d(.9, .9, .9);
   transition: .15s $ease-in-out-quad;
-  transition-property: transform opacity;
+  transition-property: transform, opacity;
   width: 100%;
   z-index: 1;
 
@@ -63,34 +70,38 @@ Functional styling for a reusable dialog pop-up
 
 // Separate background element for animation and z-index purposes
 .e-dialog__background {
-  background-color: $grey-50;
+  background-color: rgba($grey-50, .5);
   bottom: 0;
   height: 100%;
-  left: -100%;;
-  opacity: 0;
+  left: -100%;
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity .15s $ease-in-out-quad;
+  transition: .15s $ease-out-quad, 0s linear .3s;
+  transition-property: transform, left;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 
 // dialog is showing
-.is-active {
+.e-dialog.is-active {
   opacity: 1;
   pointer-events: all;
-  transition-property: opacity;
+  transition: .3s $ease-in-out-quad, 0s linear;
+  transition-property: opacity, visibility;
   visibility: visible;
 
   .e-dialog__panel {
     opacity: 1;
     transform: scale3d(1, 1, 1);
+    transition: .3s $ease-in-out-quad 100ms, .3s $ease-in-out-quad;
+    transition-property: transform, opacity;
   }
 
   .e-dialog__background {
     left: 0;
-    opacity: .5;
+    transition: 0s;
+    transition-property: left;
   }
 }
 
