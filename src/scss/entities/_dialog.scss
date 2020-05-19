@@ -1,12 +1,12 @@
 
 /*
-MODAL
+DIALOG
 -----
-Functional styling for a reusable modal pop-up
+Functional styling for a reusable dialog pop-up
 */
 
 // Global scroll behaviour
-.is--modal-open {
+.is--dialog-open {
   overflow: hidden;
 
   body {
@@ -22,28 +22,30 @@ Functional styling for a reusable modal pop-up
   }
 }
 
-.e-modal {
+.e-dialog {
   display: flex;
-  height: 100%;
+  // height: 100%;
   justify-content: center;
   left: 0;
+  margin-top: 85px; // correction for site-header
+  opacity: 0;
   overflow: auto;
   pointer-events: none;
   position: fixed;
-  margin-top: 75px; // correction for site-header
   visibility: hidden;
   width: 100%;
   -webkit-overflow-scrolling: touch;
-  @include z(modal);
+  @include z(dialog);
 }
 
-// Panel - holds modal content
-.e-modal__panel {
+// Panel - holds dialog content
+.e-dialog__panel {
   background-color: $white;
   height: auto;
   max-width: 95vw;
   opacity: 0;
   padding: $spacing-l;
+  position: relative;
   transform: scale3d(.9, .9, .9);
   transition: .15s $ease-in-out-quad;
   transition-property: transform opacity;
@@ -60,36 +62,40 @@ Functional styling for a reusable modal pop-up
 }
 
 // Separate background element for animation and z-index purposes
-.e-modal-background {
+.e-dialog__background {
   background-color: $grey-50;
   bottom: 0;
-  left: 0;
+  height: 100%;
+  left: -100%;;
   opacity: 0;
   position: fixed;
   right: 0;
   top: 0;
   transition: opacity .15s $ease-in-out-quad;
+  width: 100%;
   z-index: 0;
 }
 
-// Modal is showing
-.e-modal--is-showing {
+// dialog is showing
+.is-active {
+  opacity: 1;
   pointer-events: all;
+  transition-property: opacity;
   visibility: visible;
 
-  .e-modal__panel {
+  .e-dialog__panel {
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
 
-  .modal__background {
+  .e-dialog__background {
     left: 0;
     opacity: .5;
   }
 }
 
 
-.e-modal__button-close {
+.e-dialog__button-close {
   position: absolute;
   right: 0;
   top: 0;

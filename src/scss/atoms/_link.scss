@@ -1,0 +1,32 @@
+
+/*
+LINK
+----
+Styled link
+*/
+
+.a-link {
+  color: $blue-50;
+  margin-bottom: 1.4rem;
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    border-bottom: 1px solid $blue-50;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: .3s $ease-in-out-quad;
+    transition-property: width opacity;
+    width: 0;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 1;
+    width: 100%;
+  }
+}

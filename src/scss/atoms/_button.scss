@@ -1,6 +1,21 @@
 
 .a-button {
   background-color: $orange-50;
-  font-weight: 600;
   color: $white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+  padding: $spacing-s $spacing-m;
+  text-transform: uppercase;
+  transition: .3s $ease-in-out-quad;
+  transition-property: transform;
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  &:active {
+    transform: scale3d(.99, .99, .99);
+  }
 }

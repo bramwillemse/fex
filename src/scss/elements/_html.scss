@@ -1,4 +1,18 @@
 html {
-  font-size: 18px;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: $grey-70;
+
+  @include breakpoint(s) {
+    font-size: 17px;
+  }
+
+  @include breakpoint(m) {
+    font-size: 18px;
+  }
+
+  @include breakpoint(l) {
+    font-size: 19px;
+  }
+
 }
