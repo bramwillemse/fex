@@ -1,4 +1,6 @@
-import { disableBodyScroll, enableBodyScroll } from '../utilities/body-scroll'
+import { EVENTS } from './constants/events'
+import { eventBus } from './utilities/event-bus'
+import { disableBodyScroll, enableBodyScroll } from './utilities/body-scroll'
 
 /*
 DIALOG
@@ -52,6 +54,7 @@ export class Dialog {
     this.dialog.classList.add(ACTIVE_CLASS)
     // Set focus to first focusable element in dialog
     this.focusableElements[0].focus()
+    eventBus.publish(EVENTS.DIALOG.OPEN)
     disableBodyScroll()
   }
 
@@ -59,6 +62,7 @@ export class Dialog {
     this.dialog.classList.remove(ACTIVE_CLASS)
     // Reset focus to previously focused element before opening dialog
     this.activeElementBeforeOpen.focus()
+    eventBus.publish(EVENTS.DIALOG.CLOSED)
     enableBodyScroll()
   }
 }

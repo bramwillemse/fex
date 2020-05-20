@@ -35,8 +35,9 @@ Functional styling for a reusable dialog pop-up
   width: 100%;
   @include z(dialog);
 
+  // Prevent overlap for any content if dialog is inactive
   * {
-    pointer-events: none;
+    pointer-events: none !important;
   }
 }
 
@@ -97,7 +98,7 @@ Functional styling for a reusable dialog pop-up
   visibility: visible;
 
   * {
-    pointer-events: all;
+    pointer-events: all !important;
   }
 
   .e-dialog__panel {
